@@ -1,0 +1,20 @@
+{
+  "offers": [
+    {
+      "id": 1,
+      "poster": "https://www.themoviedb.org/t/p/w220_and_h330_face/jXbqfVHmvCikyTw2Lf5OhKyt9Ym.jpg",
+      "title": "Offer 1",
+      "description": "This is the Offer 1.",
+      "points": 150,
+      "businessId": 26344128676
+    },
+    {
+      "id": 2,
+      "poster": "https://www.themoviedb.org/t/p/w220_and_h330_face/jXbqfVHmvCikyTw2Lf5OhKyt9Ym.jpg",
+      "title": "Offer 2",
+      "description": "This is the Offer 2.",
+      "points": 150,
+      "businessId": 26344128676
+    }
+  ]
+}
