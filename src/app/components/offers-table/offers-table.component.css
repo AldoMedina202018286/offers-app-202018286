@@ -1,0 +1,17 @@
+.table-container{
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+mat-paginator {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+ng-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
