@@ -1,0 +1,27 @@
+.edit-offer-form {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  /*outline: red dashed 1px;*/
+}
+
+.edit-offer-form mat-form-field {
+  display: block;
+}
+
+.update-actions {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.update-button {
+  background-color: #219fdf;
+  color: white;
+}
+
+.cancel-button {
+  color: #b24a38;
+}

@@ -1,0 +1,24 @@
+<div class="edit-offer-form" *ngIf="offerData">
+  <form (submit)="onSubmit()" #offerForm='ngForm'>
+    <label>Title</label>
+    <mat-form-field>
+      <input matInput placeholder="Title" required [(ngModel)]="offerData.title" name="title">
+    </mat-form-field>
+    <label>Description</label>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" required [(ngModel)]="offerData.description" name="description"></textarea>
+    </mat-form-field>
+    <label>Points</label>
+    <mat-form-field>
+      <input matInput placeholder="Points" required [(ngModel)]="offerData.points" name="points">
+    </mat-form-field>
+    <label>Business ID</label>
+    <mat-form-field>
+      <input matInput placeholder="Business ID" required [(ngModel)]="offerData.businessId" name="businessId">
+    </mat-form-field>
+    <div class="update-actions">
+      <button mat-button class="update-button" (click)="updateOffer()" routerLink="/business/offers">Update Offer</button>
+      <button mat-button class="cancel-button" (click)="cancelEditOffer()" routerLink="/business/offers">Cancel</button>
+    </div>
+  </form>
+</div>
