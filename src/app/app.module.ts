@@ -10,13 +10,15 @@ import { HomeComponent } from './components/home/home.component';
 import { OffersTableComponent } from './components/offers-table/offers-table.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgOptimizedImage} from "@angular/common";
+import { AddOfferDialogComponent } from './components/add-offer-dialog/add-offer-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    OffersTableComponent
+    OffersTableComponent,
+    AddOfferDialogComponent
   ],
   imports: [
     BrowserModule,

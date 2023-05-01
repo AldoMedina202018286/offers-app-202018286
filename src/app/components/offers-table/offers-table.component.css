@@ -1,7 +1,17 @@
+.add-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-offer button {
+  margin: 0.5rem;
+}
+
 .table-container{
   max-width: 1000px;
   margin: auto;
-  padding: 2rem;
+  padding: 0.5rem;
 }
 
 mat-paginator {
@@ -10,8 +20,13 @@ mat-paginator {
   right: 0;
 }
 
-ng-container {
+.mat-actions-column {
   display: flex;
-  align-content: center;
   justify-content: center;
+  align-items: center;
 }
+
+.mat-snack-bar-container {
+  background-color: #ff0000;
+}
+
