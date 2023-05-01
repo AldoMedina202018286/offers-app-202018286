@@ -6,8 +6,6 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {OffersDataService} from "../../services/offers-data.service";
 import * as _ from "lodash";
-import {AddOfferDialogComponent} from "../add-offer-dialog/add-offer-dialog.component";
-import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
@@ -28,7 +26,6 @@ export class OffersTableComponent {
 
   constructor(
     private offersDataService: OffersDataService,
-    public dialog: MatDialog,
     private snackBar: MatSnackBar
   )
   {
@@ -70,14 +67,6 @@ export class OffersTableComponent {
     this.offersDataService.createItem(this.offerData).subscribe((response: any) => {
       this.dataSource.data.push({...response});
       this.dataSource.data = this.dataSource.data.map((o: any) => { return o})
-    })
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(AddOfferDialogComponent, {width: '400px', data: { }});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     })
   }
 
