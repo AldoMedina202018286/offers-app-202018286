@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgOptimizedImage} from "@angular/common";
 import { NewOfferComponent } from './components/new-offer/new-offer.component';
 import {FormsModule} from "@angular/forms";
+import { EditOfferComponent } from './components/edit-offer/edit-offer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     OffersTableComponent,
     NewOfferComponent,
+    EditOfferComponent,
   ],
   imports: [
     BrowserModule,
