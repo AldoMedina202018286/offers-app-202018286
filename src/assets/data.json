@@ -15,11 +15,18 @@
       "id": 2
     },
     {
-      "title": "Offer 30",
+      "title": "Offer 3",
       "description": "This is a description for the Offer 3",
       "points": "45",
       "businessId": "3",
       "id": 3
+    },
+    {
+      "title": "Offer 4",
+      "description": "This is a description for the Offer 4",
+      "points": "87",
+      "businessId": "4",
+      "id": 4
     }
   ]
 }

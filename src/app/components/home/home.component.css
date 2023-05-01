@@ -5,3 +5,17 @@
   margin: auto;
   padding: 10rem;
 }
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.button-container button {
+  background-color: #e56049;
+  color: white;
+}
