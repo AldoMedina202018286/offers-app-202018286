@@ -1,0 +1,22 @@
+<div class="offer-form">
+  <form (submit)="onSubmit()" #offerForm='ngForm'>
+    <mat-form-field>
+      <input matInput name="title" placeholder="Title" required [(ngModel)]="offerData.title">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput name="description" placeholder="Description" required [(ngModel)]="offerData.description">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput name="points" placeholder="Points" required [(ngModel)]="offerData.points">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput name="businessId" placeholder="Business ID" required [(ngModel)]="offerData.businessId">
+    </mat-form-field>
+    <div class="form-actions">
+      <ng-container>
+        <button mat-button class="add-button" (click)="addOffer()" routerLink="/business/offers">Add</button>
+        <button mat-button class="cancel-button" (click)="cancelEditOffer()" routerLink="/business/offers">Cancel</button>
+      </ng-container>
+    </div>
+  </form>
+</div>

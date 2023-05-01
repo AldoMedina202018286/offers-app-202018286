@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { OffersTableComponent } from './components/offers-table/offers-table.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgOptimizedImage} from "@angular/common";
+import { NewOfferComponent } from './components/new-offer/new-offer.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import {NgOptimizedImage} from "@angular/common";
     HeaderComponent,
     HomeComponent,
     OffersTableComponent,
+    NewOfferComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import {NgOptimizedImage} from "@angular/common";
     MaterialModule,
     HttpClientModule,
     NgOptimizedImage,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

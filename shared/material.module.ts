@@ -11,6 +11,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
+    MatGridListModule,
   ],
   exports: [
     MatToolbarModule,
@@ -40,6 +42,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
+    MatGridListModule
   ]
 })
 

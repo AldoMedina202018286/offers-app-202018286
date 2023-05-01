@@ -1,27 +1,21 @@
 import {Component, ViewChild} from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
-import {Offer} from "../../models/offer";
 import {NgForm} from "@angular/forms";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatSort} from "@angular/material/sort";
 import {OffersDataService} from "../../services/offers-data.service";
+import {Offer} from "../../models/offer";
+import {MatTableDataSource} from "@angular/material/table";
 import * as _ from "lodash";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-offers-table',
-  templateUrl: './offers-table.component.html',
-  styleUrls: ['./offers-table.component.css']
+  selector: 'app-new-offer',
+  templateUrl: './new-offer.component.html',
+  styleUrls: ['./new-offer.component.css']
 })
-export class OffersTableComponent {
-
+export class NewOfferComponent {
   offerData!: Offer;
   dataSource = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'title', 'description', 'points', 'businessId', 'actions']
 
   isEditMode = false;
-  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort!: MatSort;
   @ViewChild('offerForm', {static: false}) offerForm!: NgForm;
 
   constructor(
@@ -33,15 +27,44 @@ export class OffersTableComponent {
   }
 
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.getAllOffers();
+  }
+
+  onSubmit() {
+    if (this.offerForm.form.valid) {
+      console.log('valid');
+      if (this.isEditMode) {
+        console.log('about to update');
+        //this.updateOffer();
+      }
+      else {
+        console.log('about to create');
+        //this.addOffer();
+      }
+      this.cancelEditOffer();
+    }
+    else {
+      console.log('Invalid data');
+    }
   }
 
   getAllOffers() {
     this.offersDataService.getItemList().subscribe((response: any) => {
       this.dataSource.data = response;
     })
+  }
+
+  addOffer() {
+    this.offerData.id = 0;
+    this.offersDataService.createItem(this.offerData).subscribe((response: any) => {
+      this.dataSource.data.push({...response});
+      this.dataSource.data = this.dataSource.data.map((o: any) => { return o})
+    })
+
+    this.snackBar.open('Offer added successfully!', 'Close',
+      {
+        duration: 3000,
+      });
   }
 
   updateOffer() {
@@ -63,19 +86,5 @@ export class OffersTableComponent {
   cancelEditOffer() {
     this.isEditMode = false;
     this.offerForm.resetForm();
-  }
-
-  deleteOffer(id: string) {
-    this.offersDataService.deleteItem(id).subscribe((response: any) => {
-      this.dataSource.data = this.dataSource.data.filter((o: any) => {
-        return o.id !== id ? o : false;
-      })
-    })
-    console.log(this.dataSource.data)
-
-    this.snackBar.open('Offer deleted successfully!', 'Close',
-      {
-        duration: 3000,
-      });
   }
 }
