@@ -8,6 +8,7 @@
 
 .offer-form mat-form-field {
   display: block;
+  margin-bottom: 20px;
 }
 
 .offer-form .form-actions {

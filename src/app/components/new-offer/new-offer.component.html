@@ -1,21 +1,33 @@
 <div class="offer-form">
   <form (submit)="onSubmit()" #offerForm='ngForm'>
+
+    <!--Title input-->
     <label>Title</label>
-    <mat-form-field>
-      <input matInput name="title" placeholder="Title" required [(ngModel)]="offerData.title">
+    <mat-form-field hintLabel="Max 60 characters" appearance="outline">
+      <input matInput #input_title name="title" placeholder="i.e. New offer on this product" maxlength="60" required [(ngModel)]="offerData.title">
+      <mat-hint align="end">{{input_title.value.length}}/60</mat-hint>
     </mat-form-field>
+
+    <!--Description input-->
     <label>Description</label>
-    <mat-form-field>
-      <input type="text" matInput name="description" placeholder="Description" required [(ngModel)]="offerData.description">
+    <mat-form-field hintLabel="Max 200 characters" appearance="outline">
+      <textarea type="text" #input_description matInput name="description" placeholder="Detailed description of the offer..." maxlength="200" [(ngModel)]="offerData.description"></textarea>
+      <mat-hint align="end">{{input_description.value.length}}/200</mat-hint>
     </mat-form-field>
+
+    <!--Points input-->
     <label>Points</label>
-    <mat-form-field>
-      <input type="text" matInput name="points" placeholder="Points" required [(ngModel)]="offerData.points">
+    <mat-form-field hintLabel="Max 100 points" appearance="outline">
+      <input type="number" matInput name="points" placeholder="Points" max="100" [(ngModel)]="offerData.points">
     </mat-form-field>
+
+    <!--Business ID input-->
     <label>Business ID</label>
-    <mat-form-field>
-      <input type="text" matInput name="businessId" placeholder="Business ID" required [(ngModel)]="offerData.businessId">
+    <mat-form-field appearance="outline">
+      <input type="number" matInput name="businessId" placeholder="Business identification number" required [(ngModel)]="offerData.businessId">
     </mat-form-field>
+
+    <!--Form Actions-->
     <div class="form-actions">
       <ng-container>
         <button mat-button class="add-button" (click)="addOffer()" routerLink="/business/offers">Add Offer</button>

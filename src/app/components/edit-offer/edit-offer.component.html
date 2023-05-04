@@ -1,11 +1,16 @@
 <div class="edit-offer-form" *ngIf="offerData">
   <form (submit)="onSubmit()" #offerForm='ngForm'>
+
+    <!--Title input-->
     <label>Title</label>
-    <mat-form-field>
-      <input matInput placeholder="Title" required [(ngModel)]="offerData.title" name="title">
+    <mat-form-field hintLabel="Max 60 characters" appearance="outline">
+      <input matInput #input_title placeholder="Title" maxlength="60" required [(ngModel)]="offerData.title" name="title">
+      <mat-hint align="end">{{input_title.value.length}}/60</mat-hint>
     </mat-form-field>
+
+    <!--Description input-->
     <label>Description</label>
-    <mat-form-field>
+    <mat-form-field hintLabel="Max 200 characters" appearance="outline">
       <textarea matInput placeholder="Description" required [(ngModel)]="offerData.description" name="description"></textarea>
     </mat-form-field>
     <label>Points</label>
