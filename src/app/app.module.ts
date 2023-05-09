@@ -13,6 +13,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { NewOfferComponent } from './components/new-offer/new-offer.component';
 import {FormsModule} from "@angular/forms";
 import { EditOfferComponent } from './components/edit-offer/edit-offer.component';
+import { ViewOfferComponent } from './components/view-offer/view-offer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditOfferComponent } from './components/edit-offer/edit-offer.component
     OffersTableComponent,
     NewOfferComponent,
     EditOfferComponent,
+    ViewOfferComponent,
   ],
   imports: [
     BrowserModule,
