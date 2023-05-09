@@ -1,0 +1,27 @@
+<mat-grid-list cols="4" class="offer-grid" rowHeight="2 : 1">
+  <mat-grid-tile *ngFor="let offer of offerData" class="grid-tile">
+    <mat-card class="offer-card">
+      <mat-card-header>
+        <mat-card-title>
+          {{offer.title}}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{offer.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="deleteOffer(offer.id)">Delete offer</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-actions>
+        <button mat-button color="primary" routerLink="/admin/offers/new">Add offer</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
